@@ -9,13 +9,12 @@
     var href = window.location.href;
 
     href = href.replace(/index\.html$/, '');
-    alert(href);
+
     if (href.search(/\/$/) === -1) {
       href += '/';
     }
 
-    href += 'slides/'
-    alert(href);
+    href += 'slides/';
 
     window.location.replace(href);
   </script>
