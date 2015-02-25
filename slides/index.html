@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>reveal.js - The HTML Presentation Framework</title>
+    <title>Code Review</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
@@ -130,7 +130,6 @@
         </section>
 
         <section>
-          <!-- How to review code -->
           <section>
             <h2>Now we're reviewing code, what are we looking for?</h2>
           </section>
@@ -150,26 +149,48 @@
           </section>
           <section>
             <h3>Examples</h3>
-            <pre>if ($('#input-field').length > 0) {
-  $('#input-field').css('background-color', 'green');
+            <p>Story: Postcode field should be green when populated</p>
+            <pre>if ($('#postcode').val()$('#postcode').val().length > 0) {
+  $('#postcode').css('background-color', 'green');
 }</pre>
+<p class="fragment">'> 0' check is redundant</p>
+          </section>
+          <section>
+            <p>Story: Invalid fields should have an error message attached to them</p>
+            <pre>if (!Validator.isFieldValid($('#postcode'))) {
+  $('#postcode').append('Postcode field is invalid');
+}</pre>
+<p class="fragment">Not all execution paths have been checked</p>
           </section>
         </section>
 
         <section>
           <section>
-            <h2>There's usually something wrong with the code, somewhere</h2>
-            <p class="fragment">And that's the code's fault, not yours</p>
+            <h2>Compromising</h2>
+            <img src="img/wtfm.jpg">
+            <p class="fragment">Page 1 of <strong>Clean Code</strong> - Robert C. Martin</p>
           </section>
           <section>
             <h2>After the review...</h2>
             <ol>
               <li>Agree with reviewer the improvements you will make</li>
-              <li>Implement these changes</li>
-              <li>Reviewer reviews those changes</li>
-              <li>Repeat until reviewer is satisfied</li>
+              <li class="fragment">Implement these changes</li>
+              <li class="fragment">Reviewer reviews those changes</li>
+              <li class="fragment">Repeat until reviewer is satisfied</li>
             </ol>
           </section>
+        </section>
+
+        <section>
+          <h2>In short...</h2>
+          <ul>
+            <li class="fragment">Save time in waiting for QA feedback</li>
+            <li class="fragment">Ensure code is written in a common pattern</li>
+            <li class="fragment">Understand your team's strengths</li>
+          </ul>
+        </section>
+        <section>
+          Any questions?
         </section>
       </div>
     </div>
