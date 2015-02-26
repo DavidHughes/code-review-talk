@@ -150,17 +150,22 @@
           <section>
             <h3>Examples</h3>
             <p>Story: Postcode field should be green when populated</p>
-            <pre>if ($('#postcode').val()$('#postcode').val().length > 0) {
+            <pre>if ($('#postcode').val() && $('#postcode').val().length > 0) {
   $('#postcode').css('background-color', 'green');
 }</pre>
-<p class="fragment">'> 0' check is redundant</p>
+<p class="fragment">2nd half of if condition is redundant</p>
           </section>
           <section>
             <p>Story: Invalid fields should have an error message attached to them</p>
             <pre>if (!Validator.isFieldValid($('#postcode'))) {
   $('#postcode').append('Postcode field is invalid');
 }</pre>
-<p class="fragment">Not all execution paths have been checked</p>
+            <p class="fragment">Not all execution paths have been checked</p>
+            <aside class="notes">
+              Postcode field will accrue more and more error messages.<br/>
+
+              Talk about how many issues could be potentially found.
+            </aside>
           </section>
         </section>
 
@@ -187,6 +192,7 @@
             <li class="fragment">Save time in waiting for QA feedback</li>
             <li class="fragment">Ensure code is written in a common pattern</li>
             <li class="fragment">Understand your team's strengths</li>
+            <li class="fragment">The code is under review - not you</li>
           </ul>
         </section>
         <section>
